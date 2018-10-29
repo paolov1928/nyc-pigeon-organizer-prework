@@ -1,4 +1,7 @@
 require "pry"
+
+
+
 def nyc_pigeon_organizer(data)
 names = []
 chars = []
@@ -43,7 +46,12 @@ chars = []
   
   paths.each do |path|
   second_level[path[0]][path[1]] = []
-  second_level[path[0]][path[1]] << path[2].to_s
+  #binding.pry
+    if second_level[path[0]][path[1]].empty?
+      second_level[path[0]][path[1]] = [path[2].to_s]
+    else
+      second_level[path[0]][path[1]] << path[2].to_s
+    end
   end
   
     #why cant we add to an array without changing all of them
